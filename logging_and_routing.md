@@ -92,22 +92,27 @@ Your application will need to listen for these URLs and *route* (send) them to d
 
 For now, let's just focus on the routing part.
 
+These are the routes we have so far in our app:
 
+```js
+app.get("/",(req,res)=> {
+    res.send("Hello Express!");
+});
 
-<!-- ## Handling Request Parameters
-
-**HTTP GET** requests often send parameters in the URL, either in the form of a specific URL format or via a query string.
-
-For example, your application might want to route to a post by the author 'mrandersen' with a postId of '17' like so:
-
-```
-https://myblogsite/posts/mrandersen/17
-```
-
-Or, you might put this information in a query string:
+app.get("/home", (req, res) => res.sendFile(__dirname + "/public/home.html"));
 
 ```
-https://myblogsite/posts?author=kandersen&postid=17
-```
 
-Express can handle either type of request. -->
+Express's **get** method assigns routes that come in via an HTTP GET request. There are other types of HTTP requests including **post**, **put**, and **delete** but we'll deal with those later. **Get** is the default type of request, and it is meant to retreive data from a server, such as an HTML or CSS file.
+
+**get** takes two parameters, a **route** and a **callback**. The route lets Express point a request to a certain function. The callback is the function in question. The callback is passed the **req** and **res** objects by default.
+
+In the example above, when we get a request with the "/home" route, Express will go down the middleware stack from top to bottom. If it runs into an **app.use** it will apply the middleware regardless of route. This is how we implement logging.
+
+If it runs into an **app.get** it will only apply the middleware if the route in the request matches the route specified in the method. This is why a request to *http://localhost:3000* does not get served our static HTML file, but a request to *http://localhost:3000/home* does.
+
+When a request matches a route, the callback is fired. In the case of our "/home" route, the callback is just the **res.sendFile** method.
+
+It would be possible to put all the functionality our application needs right inside the routes, but Express applications should not be designed this way. In fact, routes should rarely be more than a single line of code. 
+
+We'll learn more about the proper way to structure an application in the next segment.
