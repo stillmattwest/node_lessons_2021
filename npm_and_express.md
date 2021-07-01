@@ -210,7 +210,7 @@ We have to do two things: one, we have to tell our application to serve static f
 
 ## Express.static
 
-Express.static is a method that allows our application to serve static files. It is a type of _middleware_. Middleware is a big concept in React and we'll talk more about it later.
+Express.static is a method that allows our application to serve static files. It is a type of _middleware_. Middleware is a big concept in Node and Express,and we'll talk more about it later.
 
 For now, edit the application to look like this:
 
