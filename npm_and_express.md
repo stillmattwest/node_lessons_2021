@@ -277,7 +277,7 @@ But what is middleware? Middleware is a stack of applications that sit between t
 - End the request-response cycle.
 - Call the next middleware function in the stack.
 
-In our application, we have three middlewars in our stack:
+In our application, we have three _middlewares_ in our stack:
 
 ```javascript
 app.use(express.static(__dirname + "/public"));
@@ -303,4 +303,4 @@ There are many other types of middlewares and you will write more yourself for y
 
 Our application has come a long way in a short time. We went from a single JavaScript file to a full application with dependencies, middleware, and a folder for static files. Our application can now respond to multiple routes with unique responses for each.
 
-Coming up, we'll learn about a few more essential modules for Node applications and we'll learn about processing user data in our requests using either request parameters and form data. We'll need to understand all of that before we can start working with our database to have a legitimate full-stack application.
+Coming up, we'll learn about a few more essential modules for Node applications and we'll learn about processing user data in our requests using either request parameters and form data.
