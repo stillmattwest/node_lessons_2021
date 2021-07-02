@@ -46,12 +46,10 @@ You should now see a file called **package.json** in your directory. Go ahead an
 We can now add Express to our application. In your terminal, run the following command:
 
 ```
-npm install express --save
+npm install express
 ```
 
 This command will cause npm to find the **express** module and add it to your application as a dependency.
-
-**NOTE:** The _--save_ option is actually unnecessary in modern version of npm as new modules are saved as dependencies by default. However, it is listed in a lot of online tutorials and so is included here to avoid confusion.
 
 After you run the command you should see a new folder in your application: **node_modules**.
 
@@ -303,4 +301,4 @@ There are many other types of middlewares and you will write more yourself for y
 
 Our application has come a long way in a short time. We went from a single JavaScript file to a full application with dependencies, middleware, and a folder for static files. Our application can now respond to multiple routes with unique responses for each.
 
-Coming up, we'll learn about a few more essential modules for Node applications and we'll learn about processing user data in our requests using either request parameters and form data.
+Coming up, we'll learn about a few handy modules for our applications, and more about Express **routing**.
