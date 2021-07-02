@@ -182,7 +182,7 @@ exports.firstController = (req,res) => {
     res.send(`Hello from firstController! I called      firstModel and it says: ${response}`);
 }
 ```
-As you can see, models are controllers are just JavaScript functions. We conncect them using Node's **exports** and **require** statements.
+As you can see, models and controllers are just JavaScript functions. We conncect them using Node's **exports** and **require** statements.
 
 This is a really important thing to understand about MVC. It's not a framework or something that has a specific syntax. It's just a strategy for keeping our code organized and maintainable. That's what a **design pattern** is. 
 
